@@ -324,7 +324,7 @@
     },
     "searchServiceSkuName": {
       "type": "string",
-      "defaultValue": "Standard"
+      "defaultValue": "Basic"
     },
     "searchServiceReplicaCount": {
       "type": "int",
@@ -582,7 +582,7 @@
     },
     "azureServiceBusSkuName": {
       "type": "string",
-      "defaultValue": "standard"
+      "defaultValue": "basic"
     },
     "azureServiceBusManageSharedAccessKeyName": {
       "type": "string",
