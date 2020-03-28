@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "variables": {
@@ -37,7 +37,15 @@
         ]
       }
     },
-
+    "sqlserver_resourcegroup_name": {
+     "type": "string"
+    },
+     "sqlserver_resourcegroup_location": {
+      "type": "string"
+    },
+	"sqlServerFqdn_input": {
+      "type": "string"
+    },
     "templateLinkBase": {
       "type": "string",
       "minLength": 1,
@@ -392,11 +400,6 @@
       "type": "bool",
       "defaultValue": false
     },
-    "xpPerformanceCountersType": {
-      "type": "string",
-      "allowedValues": [ "Disable", "ApplicationInsights" ],
-      "defaultValue": "[if(parameters('storeSitecoreCountersInApplicationInsights'), 'ApplicationInsights', 'Disable')]"
-    },
     "applicationInsightsPricePlan": {
       "type": "string",
       "minLength": 1,
@@ -667,7 +670,7 @@
       "type": "string",
       "defaultValue": "8.11.1"
     },
-    
+
     "environmentType": {
       "type": "string",
       "defaultValue": "Non-Production"
@@ -764,7 +767,15 @@
           "sitecoreSKU": {
             "value": "[parameters('sitecoreSKU')]"
           },
-
+		   "sqlserver_resourcegroup_name": {
+			 "value": "[parameters('sqlserver_resourcegroup_name')]"
+		  },
+		  "sqlserver_resourcegroup_location": {
+			  "value": "[parameters('sqlserver_resourcegroup_location')]"
+		  },
+		  "sqlServerFqdn_input": {
+			  "value": "[parameters('sqlServerFqdn_input')]"
+		  },
           "sqlServerName": {
             "value": "[parameters('sqlServerName')]"
           },
@@ -1549,9 +1560,6 @@
           },
           "azureServiceBusAccessKeyName": {
             "value": "[parameters('azureServiceBusManageSharedAccessKeyName')]"
-          },
-          "xpPerformanceCountersType": {
-            "value": "[parameters('xpPerformanceCountersType')]"
           }
         }
       },
@@ -1644,9 +1652,6 @@
           "xcRefDataWebAppName": {
             "value": "[parameters('xcRefDataWebAppName')]"
           },
-          "xcCollectWebAppName": {
-            "value": "[parameters('xcCollectWebAppName')]"
-          },
           "xcSearchWebAppName": {
             "value": "[parameters('xcSearchWebAppName')]"
           },
@@ -1685,9 +1690,6 @@
           },
           "azureServiceBusAccessKeyName": {
             "value": "[parameters('azureServiceBusManageSharedAccessKeyName')]"
-          },
-          "xpPerformanceCountersType": {
-            "value": "[parameters('xpPerformanceCountersType')]"
           }
         }
       },
@@ -1823,9 +1825,6 @@
           },
           "azureServiceBusAccessKeyName": {
             "value": "[parameters('azureServiceBusManageSharedAccessKeyName')]"
-          },
-          "xpPerformanceCountersType": {
-            "value": "[parameters('xpPerformanceCountersType')]"
           }
         }
       },
@@ -1951,9 +1950,6 @@
           },
           "repWebAppName": {
             "value": "[parameters('repWebAppName')]"
-          },
-          "xcCollectWebAppName": {
-            "value": "[parameters('xcCollectWebAppName')]"
           },
           "xcSearchWebAppName": {
             "value": "[parameters('xcSearchWebAppName')]"
