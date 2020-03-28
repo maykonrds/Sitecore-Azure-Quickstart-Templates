@@ -8,6 +8,15 @@
     "location": {
       "value": ""
     },
+    "sqlserver_resourcegroup_name": {
+      "value": ""
+    },
+    "sqlserver_resourcegroup_location": {
+      "value": ""
+    },
+    "sqlServerFqdn_input": {
+      "value": ""
+    },
     "sitecoreAdminPassword": {
       "value": ""
     },
